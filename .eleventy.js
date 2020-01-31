@@ -20,7 +20,7 @@ module.exports = eleventyConfig => {
   //   new Nunjucks.FileSystemLoader([includesDir]),
   //   { autoescape: false }
   // );
-  
+
 
   const env = Nunjucks.configure(includesDir, {
     autoescape: false
