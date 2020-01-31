@@ -1,0 +1,53 @@
+---
+title: safe/escape test
+htmlMarkup: "<b>Bold is the new <i>Italics</i></b>"
+layout: layouts/example.njk
+---
+
+<div>
+<code>htmlMarkup: "{{ htmlMarkup | escape }}"</code>
+</div>
+
+<h2>Example 1: Default behavior</h2>
+<h3><code>{% raw %}{{ htmlMarkup }}{% endraw %}</code></h3>
+
+<p>When <code>autoescape=true</code> (default), the content is treated as unsafe and the "escape" filter is automatically applied:</p>
+<pre><code>
+{%- filter escape -%}
+  {{ htmlMarkup | escape }}
+{%- endfilter -%}
+</code></pre>
+
+<p>When <code>autoescape=false</code>, the content is treated as "safe" and the output is not escaped:</p>
+<pre><code>
+{%- filter escape -%}
+  {{ htmlMarkup | safe }}
+{%- endfilter -%}
+</code></pre>
+
+<hr/>
+
+<h2>Example 2: With <code>safe</code> filter</h2>
+<h3><code>{% raw %}{{ htmlMarkup | safe }}{% endraw %}</code></h3>
+<pre><code>
+{%- filter escape -%}
+  {{ htmlMarkup | safe }}
+{%- endfilter -%}
+</code></pre>
+
+<hr />
+
+<h2>Example 3: With <code>escape</code> filter <small>(and <code>e</code> alias)</small></h2>
+<h3><code>{% raw %}{{ htmlMarkup | escape }}{% endraw %}</code></h3>
+<pre><code>
+{%- filter escape -%}
+  {{ htmlMarkup | escape }}
+{%- endfilter -%}
+</code></pre>
+
+<h3><code>{% raw %}{{ htmlMarkup | e }}{% endraw %}</code></h3>
+<pre><code>
+{%- filter escape -%}
+  {{ htmlMarkup | e }}
+{%- endfilter -%}
+</code></pre>

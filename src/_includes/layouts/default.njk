@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ title | striptags }}</title>
+</head>
+<body>
+
+<main>
+  {{ content | safe }}
+</main>
+
+{%- include "footer.njk" -%}
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "11ty-nunjucks-config",
+  "description": "Playing around with Eleventy+Nunjucks autoescape config",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (https://about.me/peterdehaan)",
+  "bugs": {
+    "url": "https://github.com/pdehaan/11ty-nunjucks-config/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "del": "^5.1.0",
+    "nunjucks": "^3.2.0"
+  },
+  "homepage": "https://github.com/pdehaan/11ty-nunjucks-config#readme",
+  "keywords": [
+    "11ty",
+    "autoescape",
+    "eleventy",
+    "safe"
+  ],
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/11ty-nunjucks-config.git"
+  },
+  "scripts": {
+    "11ty:build": "eleventy",
+    "build": "npm run 11ty:build",
+    "format:dist": "npx prettier _site/**/*.html --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
